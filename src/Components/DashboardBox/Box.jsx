@@ -69,7 +69,7 @@ const Box = (props) => {
                     </ResponsiveContainer>
                 </div>
             </div>
-        <hr />
+        <hr className='my-2'/>
         <div className='flex items-center gap-3'>
             <span className={`${props.progress === true ? 'text-green-700':'text-red-700'} text-[14px] font-semibold flex items-center gap-1`}>                
                 <FaAnglesUp className={`${props.progress === true ? 'text-green-700':'text-red-700 -rotate-180'}`} size={14}/> +32.45%</span>

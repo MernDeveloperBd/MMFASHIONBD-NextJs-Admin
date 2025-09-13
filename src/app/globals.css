@@ -22,6 +22,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
+  overflow-x: hidden;
 }
 
 @layer utilities {
@@ -33,3 +34,14 @@ body {
 .ReactCollapse--collapse {
   transition: height 400ms;
 }
+
+.card{
+  padding: 5px; border: 1px solid rgba(0,0,0,0.1); border-radius: 10px;
+}
+.tabBgColor{
+  @apply flex items-center justify-center p-2 text-[14px] cursor-pointer rounded-md
+}
+.dark .MuiSelect-root{color: white !important;}
+.dark .MuiSelect-root fieldset{border-color: rgba(255,255,255,0.1) !important;}
+.body .MuiPaper-elevation{background-color: #111113 !important;}
+.body .MuiPaper-elevation{color: rgba(255,255,255,0.8) !important;}

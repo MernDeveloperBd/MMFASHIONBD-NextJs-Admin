@@ -1,7 +1,6 @@
 
-import Sidebar from "@/Components/Sidebar/Sidebar";
+
 import "./globals.css";
-import Header from "@/Components/Header/Header";
 import ThemeProvider from "@/Components/Context/ThemeContext";
 
 export const metadata = {
@@ -14,17 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className="light">
       <body>
         <ThemeProvider>
-          <div className="main flex">
-            <div className="sidebarWrapper w-[18%] h-screen ">
-              <Sidebar />
-            </div>
-            <div className="rightContent w-[82%]">
-              <Header />
-              <div className="p-3 pt-16">
-                {children}
-              </div>
-            </div>
-          </div>
+          {children}
         </ThemeProvider>
       </body>
     </html>

@@ -17,10 +17,10 @@ const Sidebar = () => {
         setIsToggleSubMenu(!isToggleSubMenu)
     };
     return (
-        <aside className='w-[18%] h-screen max-h-screen overflow-y-scroll overflow-x-hidden p-3 border-r-[1px] border-[rgba(0,0,0,0.2)] fixed top-0 left-0'>
+        <aside className={`${context.isToggleSidebar === true ? 'w-[18%]':'w-[0%] hidden'}  h-screen max-h-screen overflow-y-scroll overflow-x-hidden p-3 border-r-[1px] border-[rgba(0,0,0,0.2)] fixed top-0 left-0 `}>
             <Link href='/'>
                 {
-                    context.theme === 'light' ? <Image src="https://res.cloudinary.com/dpd5xwjqp/image/upload/v1757668954/Misam_Marifa_Fashion_World_oo94yx.png" width={80} height={40} priority alt='logo' className="w-1/3 h-16 mx-auto" /> : <h2>Dark</h2>
+                    context.theme === 'light' && <Image src="https://res.cloudinary.com/dpd5xwjqp/image/upload/v1757668954/Misam_Marifa_Fashion_World_oo94yx.png" width={80} height={40} priority alt='logo' className="w-1/3 h-16 mx-auto" />
                 }
             </Link>
             {/* sidebar menu */}
