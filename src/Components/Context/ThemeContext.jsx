@@ -31,7 +31,7 @@ const ThemeProvider = ({ children }) => {
             </div>
             <div className={`rightContent ${isToggleSidebar === false ? 'w-[100%]':'w-[82%]'}`}>
               <Header />
-              <div className="p-3 pt-16">
+              <div className="p-3 pt-16 mt-2">
                 {children}
               </div>
             </div>

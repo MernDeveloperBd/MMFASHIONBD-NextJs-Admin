@@ -6,7 +6,7 @@ import { HiMiniPlus } from "react-icons/hi2";
 import { Button } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from 'react';
-import { AreaChart, Area, Tooltip, ResponsiveContainer, ComposedChart, Line, Bar, XAxis, YAxis, artesianGrid, Legend, Scatter, CartesianGrid } from 'recharts';
+import { AreaChart, Area, Tooltip, ResponsiveContainer, ComposedChart, Bar, XAxis, YAxis, Legend, CartesianGrid, } from 'recharts';
 
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
@@ -14,9 +14,37 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import { TbSocial } from "react-icons/tb";
-import { RiShoppingCartLine } from "react-icons/ri";
 import { BsShop } from "react-icons/bs";
+import YearPickerCom from "@/Components/YearPicker/YearPicker";
+import SearchBox from "@/Components/SearchBox/SearchBox";
+import Orders from "./orders/page";
 
+
+// custome tooltip component
+const customeToolTipProfit = ({ active, payload, label }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div style={{ backgroundColor: "#fff", border: "1px solid black", padding: "10px", borderRadius: '5px' }}>
+        <p><strong>Day:</strong>{label}</p>
+        <p><span style={{ color: "#22c55e" }}>UV:</span>{payload[0].value}</p>
+      </div>
+    )
+  };
+  return null
+}
+
+const customeToolTipSalesReport = ({ active, payload, label }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div style={{ backgroundColor: "#fff", border: "1px solid black", padding: "10px", borderRadius: '5px' }}>
+        <p><strong>Month:</strong>{label}</p>
+        <p><span style={{ color: "#22c55e" }}>Revinue:</span>{payload[0].value}</p>
+        <p><span style={{ color: "#7c3aed" }}>Expense:</span>{payload[1].value}</p>
+      </div>
+    )
+  };
+  return null
+}
 
 export default function Home() {
   const [greeting, setGreeting] = useState("Good Morning");
@@ -150,7 +178,13 @@ export default function Home() {
   ];
   const handleSelectProfit = (index) => {
     setSelectProfit(index)
-  }
+  };
+
+  const changeYear = (date) => {
+    console.log(date);
+
+  };
+
 
   return (
     <>
@@ -222,9 +256,9 @@ export default function Home() {
                     <stop offset="95%" stopColor="#8884d8" stopOpacity={0}></stop>
                   </linearGradient>
                 </defs>
-                {/* <CartesianGrid strokeDasharray="3 3" /> */}
 
-                <Tooltip />
+
+                <Tooltip content={customeToolTipProfit} />
                 <Area type="monotone" dataKey="uv" strokeWidth={3} stroke="#7c3aed" fill="url(#colorValue)" />
               </AreaChart>
             </ResponsiveContainer>
@@ -291,7 +325,10 @@ export default function Home() {
 
       {/* sales chart */}
       <div className="card w-full border border-[rgba(0,0,0,0.1)] salesReport">
-        <h2 className="text-[20px] font-bold px-5">Sales Report</h2>
+        <div className="p-5 flex items-center justify-between">
+          <h2 className="text-[20px] font-bold px-5">Sales Report</h2>
+          <div className="ml-auto"><YearPickerCom onChange={changeYear} /></div>
+        </div>
         <div className="w-full h-[400px]">
           <ResponsiveContainer width="100%" height="100%">
             <ComposedChart
@@ -308,19 +345,24 @@ export default function Home() {
               <defs>
                 <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}></stop>
-                  <stop offset="95%" stopColor="#8884d8" stopOpacity={0}></stop>
+                  <stop offset="95%" stopColor="#8884d8" stopOpacity={0.2}></stop>
                 </linearGradient>
               </defs>
               <CartesianGrid stroke="none" />
               <XAxis dataKey="name" scale="band" tick={{ fontSize: 14 }} />
               <YAxis tick={{ fontSize: 14 }} />
-              <Tooltip />
+              <Tooltip content={customeToolTipSalesReport} />
               <Legend />
               <Area type="monotone" dataKey="Revenue" strokeWidth={2} fill="url(#colorValue)" stroke="#15803d" />
-              <Bar dataKey="Expense" barSize={20} fill="#7c3aed" radius={[10, 10, 10, 10]} />
+              <Bar dataKey="Expense" barSize={20} fill="#7c3aed" radius={[10, 10, 0, 0]} />
             </ComposedChart>
           </ResponsiveContainer>
         </div>
+      </div>
+
+      {/* latest orders */}
+      <div className="card w-full border border-[rgba(0,0,0,0.1)] mt-4">
+       <Orders/>
       </div>
     </>
   );

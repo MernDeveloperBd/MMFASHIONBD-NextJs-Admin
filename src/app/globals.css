@@ -41,7 +41,9 @@ body {
 .tabBgColor{
   @apply flex items-center justify-center p-2 text-[14px] cursor-pointer rounded-md
 }
-.dark .MuiSelect-root{color: white !important;}
+/* .dark .MuiSelect-root{color: white !important;} */
 .dark .MuiSelect-root fieldset{border-color: rgba(255,255,255,0.1) !important;}
-.body .MuiPaper-elevation{background-color: #111113 !important;}
-.body .MuiPaper-elevation{color: rgba(255,255,255,0.8) !important;}
+/* .body .MuiPaper-elevation{background-color: #111113 !important;}
+.body .MuiPaper-elevation{color: rgba(255,255,255,0.8) !important;} */
+
+.dark .MuiSelect-iconOutLined{color: rgba(255,255,255,0.8) !important;}

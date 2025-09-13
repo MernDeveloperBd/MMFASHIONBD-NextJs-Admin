@@ -77,3 +77,126 @@ export const sidebarMenu = [
         icon: <LoginOutlinedIcon size={16}/>
     },
 ]
+
+export const ordersData = [
+{
+    orderId:"212",
+    customer:{
+        avatar:"https://res.cloudinary.com/dpd5xwjqp/image/upload/v1752324269/products/ektootix1e8fhncgkove.jpg",
+        name:"arifa akter",
+        email:"marifa@misam.com"
+    },
+    items:85,
+    price:"255",
+    createdAt:{
+        date:"August 25, 2024",
+        time:"5:05 PM"
+    },
+    modifiedAt:{
+        date:"August 25, 2025",
+        time:"7:05 PM"
+    },
+    status:"canceled"
+
+},
+{
+    orderId:"213",
+    customer:{
+        avatar:"https://res.cloudinary.com/dpd5xwjqp/image/upload/v1752310789/products/n1sxxuheacwdpnzbmdfn.jpg",
+        name:"arifa akter",
+        email:"marifa@misam.com"
+    },
+    items:85,
+    price:"255",
+    createdAt:{
+        date:"August 25, 2024",
+        time:"5:05 PM"
+    },
+    modifiedAt:{
+        date:"August 25, 2025",
+        time:"7:05 PM"
+    },
+    status:"refunded"
+
+},
+{
+    orderId:"214",
+    customer:{
+        avatar:"https://res.cloudinary.com/dpd5xwjqp/image/upload/v1752310789/products/n1sxxuheacwdpnzbmdfn.jpg",
+        name:"arifa akter",
+        email:"marifa@misam.com"
+    },
+    items:85,
+    price:"255",
+    createdAt:{
+        date:"August 25, 2024",
+        time:"5:05 PM"
+    },
+    modifiedAt:{
+        date:"August 25, 2025",
+        time:"7:05 PM"
+    },
+    status:"pending"
+
+},
+{
+    orderId:"211",
+    customer:{
+        avatar:"https://res.cloudinary.com/dpd5xwjqp/image/upload/v1752310789/products/n1sxxuheacwdpnzbmdfn.jpg",
+        name:"arifa akter",
+        email:"marifa@misam.com"
+    },
+    items:85,
+    price:"255",
+    createdAt:{
+        date:"August 25, 2024",
+        time:"5:05 PM"
+    },
+    modifiedAt:{
+        date:"August 25, 2025",
+        time:"7:05 PM"
+    },
+    status:"canceled"
+
+},
+{
+    orderId:"215",
+    customer:{
+        avatar:"https://res.cloudinary.com/dpd5xwjqp/image/upload/v1752310789/products/n1sxxuheacwdpnzbmdfn.jpg",
+        name:"arifa akter",
+        email:"marifa@misam.com"
+    },
+    items:85,
+    price:"255",
+    createdAt:{
+        date:"August 25, 2024",
+        time:"5:05 PM"
+    },
+    modifiedAt:{
+        date:"August 25, 2025",
+        time:"7:05 PM"
+    },
+    status:"pending"
+
+},
+{
+    orderId:"216",
+    customer:{
+        avatar:"https://res.cloudinary.com/dpd5xwjqp/image/upload/v1752310789/products/n1sxxuheacwdpnzbmdfn.jpg",
+        name:"arifa akter",
+        email:"marifa@misam.com"
+    },
+    items:85,
+    price:"255",
+    createdAt:{
+        date:"August 25, 2024",
+        time:"5:05 PM"
+    },
+    modifiedAt:{
+        date:"August 25, 2025",
+        time:"7:05 PM"
+    },
+    status:"canceled"
+
+},
+]
