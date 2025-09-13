@@ -35,7 +35,7 @@ export const sidebarMenu = [
     {
         title:"Products",
         href: "/products/list",
-        icon: <RiProductHuntLine size={16}/>,
+        icon: <RiProductHuntLine size={22}/>,
          items:[
             {
                 title:"Products List",
