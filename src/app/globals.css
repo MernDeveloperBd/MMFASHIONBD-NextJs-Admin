@@ -47,3 +47,19 @@ body {
 .body .MuiPaper-elevation{color: rgba(255,255,255,0.8) !important;} */
 
 .dark .MuiSelect-iconOutLined{color: rgba(255,255,255,0.8) !important;}
+.dark .MuiCheckbox-root{color: rgba(233, 8, 8, 0.699) !important;}
+.dark .MuiRating-icon.MuiRating-iconEmpty{color: rgba(46, 45, 45, 0.822) !important;}
+
+.rsw-editor{min-height: 180px !important;}
+.rsw-ce{@apply bg-gray-100}
+
+form .MuiSelect-root {background: #f3f4f6 !important;}
+form .MuiSelect-root fieldset{border:1px solid rgba(0,0,0,0.1) !important;}
+form .MuiSelect-root fieldset, .react-taginput{border:1px solid rgba(0,0,0,0.1) !important;}
+.react-taginput{border-radius: 0.375rem !important;}
+.react-taginput-tag{ color: black !important;}
+.colorsWrap span{position: relative;}
+.colorsWrap span::before{content: ''; width: 130%; height: 130%; top: -12%; left: -15%; position: absolute; border: 1px solid rgba(0,0,0,0.5); border-radius: 100%; display: none;}
+.colorsWrap span.act::before{display: block;}
+.btn_dark{background: black !important; color: white !important;}
+.btn_violet{background: rgb(116, 4, 116) !important; color: white !important;}

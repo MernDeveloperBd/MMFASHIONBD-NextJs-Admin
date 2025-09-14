@@ -48,7 +48,8 @@ const Box = (props) => {
         },
     ];
     return (
-        <div className={`w-full min-h-[120px] p-3 border border-[rgba(0,0,0,0.1)]  rounded-md py-4 bg-gray-100 dark:bg-themeDark`}>
+        <div className="w-full min-h-[120px] p-3 border border-[rgba(0,0,0,0.1)] rounded-md py-4 dark:bg-themeDark"
+  style={{ backgroundColor: props.bgc }} >
             <div className='w-full flex justify-between'>
                 <div className='flex items-center justify-between gap-3'>
                     <div className='leftCol flex items-center gap-3'>
@@ -64,22 +65,22 @@ const Box = (props) => {
                 <div className='chart w-[70px] h-[50px]'>
                     <ResponsiveContainer width="100%" height="100%">
                         <BarChart width={70} height={50} data={data} barGap={1}>
-                            <Bar dataKey="uv" fill={props.color} barSize={3} radius={[10,10,10,10]}/>
+                            <Bar dataKey="uv" fill={props.color} barSize={3} radius={[10, 10, 10, 10]} />
                         </BarChart>
                     </ResponsiveContainer>
                 </div>
             </div>
-        <hr className='my-2'/>
-        <div className='flex items-center gap-3'>
-            <span className={`${props.progress === true ? 'text-green-700':'text-red-700'} text-[14px] font-semibold flex items-center gap-1`}>                
-                <FaAnglesUp className={`${props.progress === true ? 'text-green-700':'text-red-700 -rotate-180'}`} size={14}/> +32.45%</span>
-            <span className='text-[14px] text-medium '>
-                {
-                    props.progress === true ? 'Increased last month' : 'Decreased last month'
-                }
-                
+            <hr className='my-2' />
+            <div className='flex items-center gap-3'>
+                <span className={`${props.progress === true ? 'text-green-700' : 'text-red-700'} text-[14px] font-semibold flex items-center gap-1`}>
+                    <FaAnglesUp className={`${props.progress === true ? 'text-green-700' : 'text-red-700 -rotate-180'}`} size={14} /> +32.45%</span>
+                <span className='text-[14px] text-medium '>
+                    {
+                        props.progress === true ? 'Increased last month' : 'Decreased last month'
+                    }
+
                 </span>
-        </div>
+            </div>
         </div>
     );
 };

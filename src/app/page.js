@@ -6,7 +6,8 @@ import { HiMiniPlus } from "react-icons/hi2";
 import { Button } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from 'react';
-import { AreaChart, Area, Tooltip, ResponsiveContainer, ComposedChart, Bar, XAxis, YAxis, Legend, CartesianGrid, } from 'recharts';
+import { AreaChart, Area, Tooltip, ResponsiveContainer, ComposedChart, Bar, XAxis, YAxis, Legend, CartesianGrid,LineChart, Line } from 'recharts';
+
 
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
@@ -16,7 +17,6 @@ import Select from '@mui/material/Select';
 import { TbSocial } from "react-icons/tb";
 import { BsShop } from "react-icons/bs";
 import YearPickerCom from "@/Components/YearPicker/YearPicker";
-import SearchBox from "@/Components/SearchBox/SearchBox";
 import Orders from "./orders/page";
 
 
@@ -38,13 +38,14 @@ const customeToolTipSalesReport = ({ active, payload, label }) => {
     return (
       <div style={{ backgroundColor: "#fff", border: "1px solid black", padding: "10px", borderRadius: '5px' }}>
         <p><strong>Month:</strong>{label}</p>
-        <p><span style={{ color: "#22c55e" }}>Revinue:</span>{payload[0].value}</p>
-        <p><span style={{ color: "#7c3aed" }}>Expense:</span>{payload[1].value}</p>
+        <p><span style={{ color: "#22c55e" }}>Old:</span>{payload[0].value}</p>
+        <p><span style={{ color: "#7c3aed" }}>New:</span>{payload[1].value}</p>
       </div>
     )
   };
   return null
 }
+
 
 export default function Home() {
   const [greeting, setGreeting] = useState("Good Morning");
@@ -114,7 +115,7 @@ export default function Home() {
       amt: 2100,
     },
   ];
-  const data = [
+  const salesData = [
     {
       name: 'Jan',
       Revenue: 590,
@@ -176,6 +177,69 @@ export default function Home() {
       Expense: 800
     },
   ];
+
+  const customerRateDate = [
+  {
+    name: 'Jan',
+    new: 4000,
+    Old: 2400
+  },
+  {
+    name: 'Feb',
+    new: 3000,
+    old: 1398
+  },
+  {
+    name: 'March',
+    new: 2000,
+    old: 9800
+  },
+  {
+    name: 'April',
+    new: 2780,
+    old: 3908
+  },
+  {
+    name: 'May',
+    new: 1890,
+    old: 4800
+  },
+  {
+    name: 'June',
+    new: 2390,
+    old: 3800
+  },
+  {
+    name: 'July',
+    new: 3490,
+    old: 4300
+  },
+  {
+    name: 'Aug',
+    new: 9490,
+    old: 8300
+  },
+  {
+    name: 'Sep',
+    new: 3490,
+    old: 4300
+  },
+  {
+    name: 'Oct',
+    new: 3490,
+    old: 4300
+  },
+  {
+    name: 'Nov',
+    new: 3490,
+    old: 4300
+  },
+  {
+    name: 'Dec',
+    new: 7490,
+    old: 5800
+  },
+];
   const handleSelectProfit = (index) => {
     setSelectProfit(index)
   };
@@ -184,11 +248,22 @@ export default function Home() {
     console.log(date);
 
   };
-
+const customeToolTipCustomerRate = ({ active, payload, label }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div style={{ backgroundColor: "#fff", border: "1px solid black", padding: "10px", borderRadius: '5px' }}>
+        <p><strong>Month:</strong>{label}</p>
+        <p><span style={{ color: "#22c55e" }}>New Customer:</span>TK{payload[0]?.value}</p>
+        <p><span style={{ color: "#7c3aed" }}>Old Customer:</span>TK{payload[1]?.value}</p>
+      </div>
+    )
+  };
+  return null
+}
 
   return (
     <>
-      <div className="box_dashboard mb-4 w-full h-[250px] rounded-md border border-[rgba(0,0,0,0.2)] p-4 flex items-center justify-between">
+      <div className="box_dashboard mb-4 w-full h-[250px] rounded-md border border-[rgba(0,0,0,0.2)] p-4 flex items-center justify-between bg-gray-100">
         <div className="colLeft flex flex-col gap-3">
           <h1 className="text-[30px] font-bold leading-10">
             {greeting}, <br /> <span className="text-violet-700">Marifa</span> <WavingHandIcon />
@@ -209,7 +284,7 @@ export default function Home() {
             height={180}
             priority
             alt='logo'
-            className="mx-auto"
+            className="mx-auto rounded-md"
           />
         </div>
       </div>
@@ -334,7 +409,7 @@ export default function Home() {
             <ComposedChart
               width={500}
               height={400}
-              data={data}
+              data={salesData}
               margin={{
                 top: 20,
                 right: 0,
@@ -363,6 +438,42 @@ export default function Home() {
       {/* latest orders */}
       <div className="card w-full border border-[rgba(0,0,0,0.1)] mt-4">
        <Orders/>
+      </div>
+      {/* Repeat customers  */}
+       <div className="card w-full border border-[rgba(0,0,0,0.1)] salesReport">
+        <div className="p-5 flex items-center justify-between">
+          <h2 className="text-[20px] font-bold px-5">Repeat Customer Rate</h2>
+          <div className="ml-auto"><YearPickerCom onChange={changeYear} /></div>
+        </div>
+        <div className="w-full h-[400px]">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart
+              width={500}
+              height={400}
+              data={customerRateDate}
+              margin={{
+                top: 20,
+                right: 0,
+                bottom: 20,
+                left: 0,
+              }}
+            >
+              <defs>
+                <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}></stop>
+                  <stop offset="95%" stopColor="#8884d8" stopOpacity={0.2}></stop>
+                </linearGradient>
+              </defs>
+              <CartesianGrid stroke="none" />
+              <XAxis dataKey="name" scale="band" tick={{ fontSize: 14 }} />
+              <YAxis tick={{ fontSize: 14 }} />
+              <Tooltip content={customeToolTipCustomerRate} />
+              <Legend />
+              <Line dataKey="old" barSize={20} fill="#7c3aed" strokeWidth={3} stroke="#7c3aed" activeDot={{ r: 8 }} />
+              <Line dataKey="new" barSize={20} fill="#22c55e" strokeWidth={3} stroke="#22c55e" activeDot={{ r: 8 }}  />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
       </div>
     </>
   );

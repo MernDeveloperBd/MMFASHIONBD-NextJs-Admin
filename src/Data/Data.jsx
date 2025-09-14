@@ -34,20 +34,20 @@ export const sidebarMenu = [
     },
     {
         title:"Products",
-        href: "/products/list",
+        href: "/products",
         icon: <RiProductHuntLine size={22}/>,
          items:[
             {
                 title:"Products List",
-                href: "/product/list",
+                href: "/products",
             },
             {
                 title:"Add Product",
-                href: "/category/add",
+                href: "/products/addProduct",
             },
             {
                 title:"Edit Product",
-                href: "/Product/edit",
+                href: "/products/editProduct",
             },
         ]
     },
@@ -58,7 +58,7 @@ export const sidebarMenu = [
     },
     {
         title:"Orders",
-        href: "/orders/list",
+        href: "/orders",
         icon: <ShoppingCartOutlinedIcon size={16}/>
     },
     {
@@ -199,4 +199,61 @@ export const ordersData = [
     status:"canceled"
 
 },
+]
+
+export const productsData = [
+    {
+        
+            id:"01",
+            image:"https://res.cloudinary.com/dpd5xwjqp/image/upload/v1752338714/profile/d0evumcbn12vlftahfsg.jpg",
+            title:"gergious borkha",
+            cat:"Borkha",
+            sku:"SB-2548",
+            stockInCount:"19",
+            price:"250",
+            oldPrice:"290",
+            resellingPrice:"200",
+            ratings:{
+                value:"5",
+                reviews:19
+            },
+            status:"pending"
+        
+    },
+    {
+        
+            id:"02",
+            image:"https://res.cloudinary.com/dpd5xwjqp/image/upload/v1752338714/profile/d0evumcbn12vlftahfsg.jpg",
+            title:"gergious borkha",
+            cat:"Borkha",
+            sku:"SB-2548",
+            stockInCount:"30",
+            price:"250",
+            oldPrice:"290",
+            resellingPrice:"200",
+            ratings:{
+                value:"3.5",
+                reviews:11
+            },
+            status:"publish"
+        
+    },
+    {
+        
+            id:"03",
+            image:"https://res.cloudinary.com/dpd5xwjqp/image/upload/v1752338714/profile/d0evumcbn12vlftahfsg.jpg",
+            title:"gergious borkha",
+            cat:"Borkha",
+            sku:"SB-2548",
+            stockInCount:"30",
+            price:"250",
+            oldPrice:"290",
+            resellingPrice:"200",
+            ratings:{
+                value:"4.5",
+                reviews:28
+            },
+            status:"draft"
+        
+    }
 ]

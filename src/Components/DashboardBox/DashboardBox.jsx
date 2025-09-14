@@ -24,16 +24,16 @@ const DashboardBox = () => {
                 className="mySwiper"
             >
                 <SwiperSlide>
-                    <Box title="New Orders" icon={<GoGift size={30} className='text-blue-600' />} count={"1390"} progress={true} color='#5b8af0'/>
+                    <Box title="New Orders" icon={<GoGift size={30} className='text-blue-600' />} count={"1390"} progress={true} color='#5b8af0' bgc='#eef3fe'/>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Box title="Sales" icon={<AiOutlinePieChart size={30} className='text-green-600' />} count={"TK 12590"} progress={false} color='#15803d'/>
+                    <Box title="Sales" icon={<AiOutlinePieChart size={30} className='text-green-600' />} count={"TK 12590"} progress={false} color='#15803d' bgc='#ecfdf5'/>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Box title="Revinue" icon={<BsBank size={30} className='text-violet-600' />} count={"TK 120590"} progress={true} color='#7c3aed'/>
+                    <Box title="Revinue" icon={<BsBank size={30} className='text-violet-600' />} count={"TK 120590"} progress={true} color='#7c3aed' bgc='#f5f3ff'/>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Box title="Users" icon={<TbUsers size={30} className='text-blue-700' />} count={" 120"} progress={false} color='#326cec'/>
+                    <Box title="Users" icon={<TbUsers size={30} className='text-blue-700' />} count={" 120"} progress={false} color='#326cec' bgc='#eef3fe'/>
                 </SwiperSlide>
             </Swiper>
         </div>
