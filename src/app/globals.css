@@ -58,8 +58,13 @@ form .MuiSelect-root fieldset{border:1px solid rgba(0,0,0,0.1) !important;}
 form .MuiSelect-root fieldset, .react-taginput{border:1px solid rgba(0,0,0,0.1) !important;}
 .react-taginput{border-radius: 0.375rem !important;}
 .react-taginput-tag{ color: black !important;}
+
 .colorsWrap span{position: relative;}
-.colorsWrap span::before{content: ''; width: 130%; height: 130%; top: -12%; left: -15%; position: absolute; border: 1px solid rgba(0,0,0,0.5); border-radius: 100%; display: none;}
+.colorsWrap span::before{content: ''; width: 130%; height: 130%; top: -3%; left: -3%; position: absolute; border: 1px solid rgba(0,0,0,0.5); border-radius: 100%; display: none;}
 .colorsWrap span.act::before{display: block;}
+
 .btn_dark{background: black !important; color: white !important;}
 .btn_violet{background: rgb(116, 4, 116) !important; color: white !important;}
+.ReactCollapse--collapse {
+  transition: height 300ms;
+}

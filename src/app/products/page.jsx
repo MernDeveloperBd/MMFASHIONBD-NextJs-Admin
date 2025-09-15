@@ -21,6 +21,7 @@ import { MdDeleteOutline } from 'react-icons/md';
 import SearchBox from '@/Components/SearchBox/SearchBox';
 import Checkbox from '@mui/material/Checkbox';
 import Rating from '@mui/material/Rating';
+import Link from 'next/link';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
@@ -194,7 +195,9 @@ const ProductsList = () => {
                                                         <Button size="small" className='!min-w-[25px] !w-[25px] !h-[25px] !text-black !bg-violet-200' variant="text"><CiEdit className='text-xl text-gray-800' /></Button>
                                                     </Tooltip>
                                                     <Tooltip title="View" placement="top">
+                                                        <Link href={`/products/view`}>
                                                         <Button size="small" className='!min-w-[25px] !w-[25px] !h-[25px] !text-black !bg-violet-200' variant="text"><IoEyeOutline className='text-xl  text-green-600' /></Button>
+                                                        </Link>
                                                     </Tooltip>
                                                     <Tooltip title="Delete" placement="top">
                                                         <Button size="small" className='!min-w-[25px] !w-[25px] !h-[25px] !text-black !bg-violet-200' variant="text"><MdDeleteOutline className='text-xl text-red-600' /></Button>
