@@ -39,7 +39,7 @@ const Header = () => {
     }
 
     return (
-        <header className={`flex ${context.isToggleSidebar === true ? 'w-[82%]' : 'w-[100%]'}  fixed top-0 right-0 z-[999] px-4 py-2 justify-between shadow-md bg-white`}>
+        <header className={`flex ${context.isToggleSidebar === true ? 'w-[82%]' : 'w-[100%]'}  fixed top-0 right-0 z-[50] px-4 py-2 justify-between shadow-md bg-white`}>
             <div className='flex items-center gap-2'>
                 <Button className='!min-w-[40px] !h-[40px] !w-[40px] !rounded-full !text-gray-800 hover:!bg-gray-200' onClick={toggleNav}> {context.isToggleSidebar === true ? <BiMenuAltLeft size={24} className='text-green-600' /> : <BiMenuAltRight size={24} className='text-red-600' />} </Button>
                 <SearchBox placeholder="Search here..." width="300px" />
