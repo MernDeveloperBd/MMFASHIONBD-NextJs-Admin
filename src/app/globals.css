@@ -68,3 +68,6 @@ form .MuiSelect-root fieldset, .react-taginput{border:1px solid rgba(0,0,0,0.1) 
 .ReactCollapse--collapse {
   transition: height 300ms;
 }
+
+.userChatScrool::-webkit-scrollbar, .msgAreaScroll::-webkit-scrollbar {width:5px !important;}
+.userChatScrool::-webkit-scrollbar-thumb, .msgAreaScroll::-webkit-scrollbar-thumb {background: #ccc !important;}

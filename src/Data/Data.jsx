@@ -6,6 +6,7 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import MarkChatUnreadOutlinedIcon from '@mui/icons-material/MarkChatUnreadOutlined';
 import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
+import { FaRegUser } from 'react-icons/fa6';
 
 export const sidebarMenu = [
     {
@@ -68,8 +69,27 @@ export const sidebarMenu = [
     },
     {
         title:"Chat",
-        href: "/chat/list",
+        href: "/chat",
         icon: <MarkChatUnreadOutlinedIcon size={16}/>
+    },
+     {
+        title:"Authentication",
+        href: "/",
+        icon: <FaRegUser size={22}/>,
+         items:[
+            {
+                title:"Sign In",
+                href: "/login",
+            },
+            {
+                title:"Sign Up",
+                href: "/sign-up",
+            },
+            {
+                title:"Forgot password",
+                href: "/forgot-password",
+            },
+        ]
     },
     {
         title:"Log Out",
@@ -256,4 +276,61 @@ export const productsData = [
             status:"draft"
         
     }
+]
+
+export const chatUserData = [
+    {
+        name:"misam mehzabin",
+        msg:"hi, how are you?",
+        time:"10:30 AM",
+        img:"https://res.cloudinary.com/dpd5xwjqp/image/upload/v1752324269/products/ektootix1e8fhncgkove.jpg"
+    },
+    {
+        name:"Marifa akter",
+        msg:"hi, I am fine.",
+        time:"10:30 AM",
+        img:"https://res.cloudinary.com/dpd5xwjqp/image/upload/v1752242429/categorys/vrw6oq3n0ozb30iq3xtm.jpg"
+    },
+    {
+        name:"Khushboo",
+        msg:"hi, how are you?",
+         time:"10:30 AM",
+        img:"https://res.cloudinary.com/dpd5xwjqp/image/upload/v1752310789/products/n1sxxuheacwdpnzbmdfn.jpg"
+    },
+    {
+        name:"Fatiha akter",
+        msg:"hi, how are you?",
+         time:"10:30 AM",
+        img:"https://res.cloudinary.com/dpd5xwjqp/image/upload/v1752324269/products/ektootix1e8fhncgkove.jpg"
+    },
+    {
+        name:"Fatiha akter",
+        msg:"hi, how are you?",
+         time:"10:30 AM",
+        img:"https://res.cloudinary.com/dpd5xwjqp/image/upload/v1752324269/products/ektootix1e8fhncgkove.jpg"
+    },
+    {
+        name:"Fatiha akter",
+        msg:"hi, how are you?",
+         time:"10:30 AM",
+        img:"https://res.cloudinary.com/dpd5xwjqp/image/upload/v1752324269/products/ektootix1e8fhncgkove.jpg"
+    },
+    {
+        name:"Fatiha akter",
+        msg:"hi, how are you?",
+         time:"10:30 AM",
+        img:"https://res.cloudinary.com/dpd5xwjqp/image/upload/v1752324559/products/vpvgwrulkvwwu9zcvefx.jpg"
+    },
+    {
+        name:"Fatiha akter",
+        msg:"hi, how are you?",
+         time:"10:30 AM",
+        img:"https://res.cloudinary.com/dpd5xwjqp/image/upload/v1752334130/products/xonccjvm5fcn1czbcjzl.jpg"
+    },
+    {
+        name:"Fatiha akter",
+        msg:"hi, how are you?",
+         time:"10:30 AM",
+        img:"https://res.cloudinary.com/dpd5xwjqp/image/upload/v1752324269/products/ektootix1e8fhncgkove.jpg"
+    },
 ]
